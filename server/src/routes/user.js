@@ -3,7 +3,6 @@ const router = express.Router();
 import path from "path";
 import { fileURLToPath } from "url";
 import { promises as fs } from "fs";
-// import usersDb from "../db/usersDb.json" assert { type: "json" };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +20,8 @@ const usersDb = {
 router
   .route("/")
   .get(async (req, res) => {
-    const latestUser = usersDb.users[-1];
+    const latestUser = usersDb.users[usersDb.users.length - 1];
+    console.log(latestUser);
     res.send(latestUser);
   })
   .post(async (req, res) => {
