@@ -31,6 +31,9 @@ const FormPage = () => {
           dob: dob.format("YYYY-MM-DD"),
         }
       );
+      if (response.statusText === "OK") {
+        openNotification(response.data.message, "bottomRight");
+      }
       setSubimtting(false);
       navigate("/display");
     } catch (error) {
