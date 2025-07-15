@@ -29,9 +29,11 @@ A full-stack application with a **React frontend** (Ant Design & Tailwind CSS) a
 
 ## Folder Structure
 
+```
 React_node_assignment/
 ├── client/ # React frontend
 └── server/ # Express backend
+```
 
 ---
 
@@ -39,22 +41,28 @@ React_node_assignment/
 
 ### 1. Clone the Repository
 
+```
 git clone https://github.com/Rajan0402/React_node_assignment.git
 cd React_node_assignment
+```
 
 ### 2. Install Dependencies And bring up service
 
 #### Backend
 
+```
 cd server
 npm install
 npm start
+```
 
 #### Frontend
 
+```
 cd ../client
 npm install
 npm start
+```
 
 ---
 
