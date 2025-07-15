@@ -21,15 +21,16 @@ router
   .route("/")
   .get(async (req, res) => {
     const latestUser = usersDb.users[usersDb.users.length - 1];
-    console.log(latestUser);
+    console.log("latestUser: ", latestUser);
     res.send(latestUser);
   })
   .post(async (req, res) => {
     try {
       const { firstName, lastName, dob } = req.body;
       const newUser = { firstName, lastName, dob };
+      console.log("newUser: ", newUser);
       usersDb.setUsers([...usersDb.users, newUser]);
-      console.log(usersDb);
+      // console.log(usersDb);
       await fs.writeFile(
         path.join(__dirname, "..", "db", "usersDb.json"),
         JSON.stringify(usersDb.users)
